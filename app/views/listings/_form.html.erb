@@ -11,7 +11,7 @@
     </div>
   <% end %>
   
-  <%= f.collection_select(:address, :property_id, Property.all, :id, :address) %>
+  <%= f.collection_select(:property_id, Property.all, :id, :address) %>
   <div class="field">
     <%= f.label :open_to_student_only %><br>
     <%= f.check_box :open_to_student_only %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302205926) do
+ActiveRecord::Schema.define(version: 20140306230116) do
 
   create_table "images", force: true do |t|
     t.integer  "property_id"
@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 20140302205926) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "property_id"
   end
 
+  add_index "listings", ["property_id"], name: "index_listings_on_property_id"
   add_index "listings", ["user_id"], name: "index_listings_on_user_id"
 
   create_table "properties", force: true do |t|
@@ -46,6 +48,20 @@ ActiveRecord::Schema.define(version: 20140302205926) do
   end
 
   add_index "properties", ["listing_id"], name: "index_properties_on_listing_id"
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", force: true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["role_id"], name: "index_roles_users_on_role_id"
+  add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id"
 
   create_table "rooms", force: true do |t|
     t.integer  "property_id"

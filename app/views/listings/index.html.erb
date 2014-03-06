@@ -3,6 +3,7 @@
 <div class="listing">
     <% @listings.each do |listing| %>
       <ul>
+        <li><%= listing.property.address %></li>
         <li><%= listing.open_to_student_only %>, it's only for students...</li>
         <li><%= number_to_currency(listing.rent_per_month) %> per month</li>
         <li>Starting <%= time_tag Date.today(listing.is_available) %></li>
