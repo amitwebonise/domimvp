@@ -1,5 +1,4 @@
 class Listing < ActiveRecord::Base
   belongs_to :user
-  has_one :room
-  has_one :property
+  belongs_to :property
 end
