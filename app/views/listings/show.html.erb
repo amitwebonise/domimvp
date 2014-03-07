@@ -1,23 +1,27 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <strong>Open to student only:</strong>
+  <li><%= image_tag(@listing.property.photo_url) %></li>  
+</p>
+<p>
+  <%= @listing.property.address %>
+</p>
+
+<p>
   <%= @listing.open_to_student_only %>
 </p>
 
 <p>
-  <strong>Rent per month:</strong>
-  <%= @listing.rent_per_month %>
+  <%= number_to_currency(@listing.rent_per_month) %>
 </p>
 
 <p>
-  <strong>Is available:</strong>
-  <%= @listing.is_available %>
+  <%= time_tag Date.today(@listing.is_available) %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @listing.user %>
+  <%= @listing.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
