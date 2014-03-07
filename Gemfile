@@ -26,6 +26,7 @@ gem 'binding_of_caller'
 
 group :development do 
   gem 'sqlite3'
+  gem "railroad"
 end
 
 group :production do 

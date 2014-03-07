@@ -28,7 +28,8 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(listing_params)
+    make_tenant
+    @listing = current_user.listings.build(listing_params)
 
     respond_to do |format|
       if @listing.save 
@@ -74,5 +75,10 @@ class ListingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:open_to_student_only, :rent_per_month, :is_available, :user_id, :property_id)
+    end
+
+    def make_tenant
+      current_user.update_attribute(:type, 'Tenant')
+      current_user.save
     end
 end
