@@ -1,0 +1,7 @@
+Property.create(:id => 1, :total_bedrooms => 4, :total_bathrooms => 3, :address => "2425 W 64th Place Merrillvile Indiana", :description => "Pretty great!", :commute_to_campus_in_minutes => 10)
+Property.create(:id => 2, :total_bedrooms => 4, :total_bathrooms => 3, :address => "2425 W 64th Place Merrillvile Indiana", :description => "Pretty great if I do say so myself! ", :commute_to_campus_in_minutes => 10, :photo => "37signals.png")
+Property.create(:id => 3, :total_bedrooms => 4, :total_bathrooms => 4, :address => "2425 W 64th Place Merrillvile Indiana", :description => "Pretty great!", :commute_to_campus_in_minutes => 4)
+Property.create(:id => 4, :total_bedrooms => 4, :total_bathrooms => 3, :address => "2425 W 64th Place Merrillvile Indiana", :description => "Swell! ", :commute_to_campus_in_minutes => 10, :photo => "crowdtilt.jpg")
+Property.create(:id => 5, :total_bedrooms => 4, :total_bathrooms => 3, :address => "2425 W 64th Place Merrillvile Indiana", :description => "swell!", :commute_to_campus_in_minutes => 10, :photo => "crowdtilt.jpg")
+Property.create(:id => 6, :total_bedrooms => 4, :total_bathrooms => 3, :address => "2425 W 64th Place Merrillvile Indiana", :description => "Swell!", :commute_to_campus_in_minutes => 10, :photo => "crowdtilt.jpg")
+Property.create(:id => 7, :total_bedrooms => 4, :total_bathrooms => 3, :address => "2425 W 64th Place Merrillvile Indiana", :description => "Swell! ", :commute_to_campus_in_minutes => 10, :photo => "crowdtilt.jpg")

@@ -10,7 +10,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem 'carrierwave'
-gem "rmagick"
+gem "mini_magick"
+gem "seed_dumper"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
