@@ -1,6 +1,7 @@
 <h1>New places around Drexel</h1>
-<div class="listing">
+<div class="rows">
     <% @recent_listings.each do |listing| %>
+    <div class="listing">
       <ul>
         <li><%= listing.property.address %></li>
         <li><%= listing.open_to_student_only %>, it's only for students...</li>
@@ -9,5 +10,6 @@
         <li><%= listing.user_id %> is the lister</li>
       </ul>
       <p><%= link_to 'Learn More', listing %></p>
+    </div>
     <% end %>
 </div>

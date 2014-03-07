@@ -4,6 +4,10 @@
   background-repeat: no-repeat;
 }*/
 
+
+
+
+
 /*listing*/
 
 #new-listing {
@@ -131,7 +135,6 @@
   border-radius: 5px;
   background-color: white;
   width: 275px;
-  height: 100%;
   margin: 10px 10px;
   padding: 10px 0;
   li {
@@ -140,6 +143,7 @@
     padding: 5px;
     font-size: 18px;
     font-family: Lucida Grande;
+    display: inline-block;
   }
   p {
     background-color: #025488;
@@ -162,6 +166,9 @@
   }
 }
 
+.individual-listing {
+  padding: 10px;
+}
 
 
 
