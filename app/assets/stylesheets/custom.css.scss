@@ -61,7 +61,22 @@
   }
 }
 
-
+#new-property a {
+  background-color: #025488;
+  font-family: Lucida Grande;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 5px;
+   a {
+    color: white;
+  }
+   :hover {
+    background-color: #0066CD;
+    text-decoration: none;
+    list-style-type: none;
+  }
+}
 
 
 /*end of property*/
@@ -117,7 +132,7 @@
   background-color: white;
   width: 275px;
   height: 100%;
-  margin: 0 10px;
+  margin: 10px 10px;
   padding: 10px 0;
   li {
     list-style-type: none;
