@@ -11,16 +11,7 @@
     </div>
   <% end %>
   <div class="field">
-      <%= f.fields_for :images do |image_form|  %>
-        <p>
-        <%= image_form.label :file %><br />
-        <%= image_form.file_field :file %>
-        </p>
-        <%= image_form.link_to_remove "Remove this image" %>
-      <% end %>
-  </div>
-  <div class="field">
-    <%= f.file_field :photo %>
+    <%= f.file_field :image %>
   </br>
   <div class="field">
     <%= f.label :total_bedrooms %><br>

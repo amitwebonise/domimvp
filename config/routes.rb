@@ -1,6 +1,7 @@
 Domimvp::Application.routes.draw do
   
   resources :properties do
+    resource :image, only: [:create]
     resources :rooms
   end
 

@@ -2,8 +2,7 @@
 
 <div class="property">
     <% @properties.each do |property| %>
-      <ul>
-        <li><%= image_tag(property.photo_url) %></li>  
+      <ul>  
         <li><%= property.address %></li>
         <li><%= property.description %></li>
         <li><%= property.total_bedrooms %> bedrooms</li>
