@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307062328) do
+ActiveRecord::Schema.define(version: 20140307234852) do
 
   create_table "images", force: true do |t|
     t.integer  "property_id"
     t.integer  "room_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "attachable_id"
   end
 
+  add_index "images", ["attachable_id"], name: "index_images_on_attachable_id"
   add_index "images", ["property_id"], name: "index_images_on_property_id"
   add_index "images", ["room_id"], name: "index_images_on_room_id"
 

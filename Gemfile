@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'carrierwave'
 gem "mini_magick"
 gem "seed_dumper"
+gem 'nested_form'
 
 
 group :doc do
