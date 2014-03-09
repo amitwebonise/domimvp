@@ -28,6 +28,8 @@ class PropertiesController < ApplicationController
   # POST /properties
   # POST /properties.json
   def create
+    puts params
+    puts property_params
     @property = Property.new(property_params)
 
     respond_to do |format|
@@ -73,6 +75,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:total_bedrooms, :total_bathrooms, :address, :description, :commute_to_campus_in_minutes, :listing_id)
+      params.require(:property).permit(:total_bedrooms, :total_bathrooms, :address, :description, :commute_to_campus_in_minutes, :listing_id, :images)
     end
 end

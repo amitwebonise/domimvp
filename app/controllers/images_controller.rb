@@ -29,7 +29,7 @@ class ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:file, :property_id, :room_id)
+    params.require(:image).permit(:file, :property_id, :room_id, :photo)
   end
 
 end

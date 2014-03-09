@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140308022647) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "attachable_id"
-    t.string   "file"
+    t.string   "photo"
   end
 
   add_index "images", ["attachable_id"], name: "index_images_on_attachable_id"
