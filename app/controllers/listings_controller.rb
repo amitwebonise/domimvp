@@ -74,7 +74,7 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:open_to_student_only, :rent_per_month, :is_available, :user_id, :property_id)
+      params.require(:listing).permit(:open_to_student_only, :rent_per_month, :is_available, :user_id, :property_id, :images)
     end
 
     def make_tenant
