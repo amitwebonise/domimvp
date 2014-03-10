@@ -15,16 +15,18 @@
   <div class="field">
     <%= f.label :open_to_student_only %><br>
     <%= f.check_box :open_to_student_only %>
-  </br>
+  </div>
   <div class="field">
     <%= f.label :rent_per_month %><br>
     <%= f.text_field :rent_per_month %>
-  </br>
+  </div>
   <div class="field">
     <%= f.label :is_available %><br>
     <%= f.datetime_select :is_available %>
-  </br>
+  </div>
   <div class="field">
+    <%= f.label :schedule, "When are you open to show it?" %><br>
+    <%= f.text_field :schedule, :placeholder => "Ex. Mondays after 5pm" %>
   </div>
   <div class="actions">
     <%= f.submit %>

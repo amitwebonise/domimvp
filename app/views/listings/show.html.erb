@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= image_tag(@listing.property.images) %>
+  <% @listing.property.images.each do |image| %>
+    <%= image_tag(image.photo_url) %>
+  <% end %>
 </p>
+
+<p>
+  <%= link_to "Schedule a session", new_listing_appointment_path(@listing) %>
+</p>
+
 <p>
   <%= @listing.property.address %>
 </p>
@@ -17,6 +24,10 @@
 
 <p>
   <%= time_tag Date.today(@listing.is_available) %>
+</p>
+
+<p>
+  <%= @listing.schedule %>
 </p>
 
 <p>

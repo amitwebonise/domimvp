@@ -3,10 +3,14 @@
     <% @listings.each do |listing| %>
     <div class="listing">
       <ul>
+        <% @listing.property.images.each do |image| %>
+            <li><%= image_tag(image.photo_url) %></li>
+          <% end %>
         <li><%= listing.property.address %></li>
         <li><%= listing.open_to_student_only %>, it's only for students...</li>
         <li><%= number_to_currency(listing.rent_per_month) %> per month</li>
         <li>Starting <%= time_tag Date.today(listing.is_available) %></li>
+        <li>Free to show it<%= listing.schedule %></li>
         <li><%= listing.user_id %> is the lister</li>
       </ul>
       <p><%= link_to 'Learn More', listing %></p>

@@ -8,7 +8,12 @@ Domimvp::Application.routes.draw do
   resources :tenants
 
 
-  resources :listings
+  resources :listings do
+    resources :appointments do
+      resources :messages , :shallow => true
+    end
+  end
+  
 
   resources :subletters
 

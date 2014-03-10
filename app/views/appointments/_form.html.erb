@@ -1,0 +1,22 @@
+<%= simple_form_for([@listing, @appointment]) do |f| %>
+  <% if @listing.appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+      <% @listing.appointment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %>
+    <%= f.datetime :end_time %>
+  </div>
+<% end %>
