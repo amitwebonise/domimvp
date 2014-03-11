@@ -1,5 +1,8 @@
 class AppointmentsController < ApplicationController
+  before_filter :get_listing
+
   def index
+    @appointments = Appointment.all
   end
 
   def show
@@ -12,19 +15,17 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+    @listing = Listing.find(params[:listing_id])
     @appointment = Appointment.new
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
     
-    respond_to do |format|
-      if @appointment.save
-        format.html { redirect_to dashboard, notice: 'Your appointment request is a success!' }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      end
+    if @appointment.save
+     redirect_to @listing, notice: 'Property was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -32,6 +33,10 @@ class AppointmentsController < ApplicationController
   end
 
   private 
+
+  def get_listing
+    @listing = Listing.find(params[:listing_id])
+  end
 
   def appointment_params
     params.require(:appointment).permit(:start_time, :end_time, :tenant, :subletter)

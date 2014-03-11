@@ -9,9 +9,7 @@ Domimvp::Application.routes.draw do
 
 
   resources :listings do
-    resources :appointments do
-      resources :messages , :shallow => true
-    end
+    resources :appointments 
   end
   
 

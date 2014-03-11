@@ -1,5 +1,18 @@
-<div class="recent-listings-partial">
-  <%= render "listings/listings" %>
-</div>  
-<div>
-</div>
+<% if signed_in? %>
+  <div class="recent-listings-partial">
+    <%= render "listings/listings" %>
+  </div>
+<% else %>
+  <div class="container">
+    <div id="sidebar">
+      <%= image_tag("domiapp.png", :alt => "Domi") %>
+      <h3>The Easiest Way to Find or Sublet an apartment.</h3>
+        <p><%= link_to "Sign up", new_user_registration_path %></p>
+        <p><%= link_to "Signin", new_user_session_path %></p>
+    </div>
+    <div class="welcome">
+      <h1>Domi is making College <br>Housing Easy</h1>
+      <h3>What We Do</h3>
+    </div>
+  </div>
+<% end %>
