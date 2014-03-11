@@ -23,7 +23,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     
     if @appointment.save
-     redirect_to @listing, notice: 'Property was successfully created.'
+     redirect_to @listing, notice: 'Your appointment request was successfully sent.'
     else
       render :new, status: :unprocessable_entity
     end
