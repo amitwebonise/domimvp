@@ -6,7 +6,7 @@ Domimvp::Application.routes.draw do
   end
 
   resources :tenants
-
+  resources :dashboard, only: [:index]
 
   resources :listings do
     resources :appointments 
