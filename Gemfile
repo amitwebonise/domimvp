@@ -13,6 +13,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem "seed_dumper"
 gem 'nested_form'
+gem 'acts_as_commentable_with_threading'
 
 
 group :doc do
