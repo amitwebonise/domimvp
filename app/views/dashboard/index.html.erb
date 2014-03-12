@@ -1,4 +1,9 @@
-<% @listing.appointments.each do |appointment| %>
-  <%= appointment.start_time %>
-  <%= appointment.end_time %>
-<% end %> 
+<ul>
+  <% @listings.each do |listing| %>  
+    <% listing.appointments.each do |appointment| %>
+        <p>Appointment pending</p>
+        <li><%= time_tag (appointment.start_time) %></li>
+        <li><%= time_tag (appointment.end_time) %></li>
+    <% end %>   
+  <% end %> 
+</ul>

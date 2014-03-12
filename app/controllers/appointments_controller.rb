@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_filter :get_listing
+  before_action :get_listing
 
   def index
     @appointments = Appointment.all
@@ -16,11 +16,12 @@ class AppointmentsController < ApplicationController
 
   def new
     @listing = Listing.find(params[:listing_id])
-    @appointment = Appointment.new
+    @appointment = @listing.appointments.new
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    @listing = Listing.find(params[:listing_id])
+    @appointment = @listing.appointments.new(appointment_params)
     
     if @appointment.save
      redirect_to @listing, notice: 'Your appointment request was successfully sent.'
