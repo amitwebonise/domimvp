@@ -1,0 +1,50 @@
+<%= simple_form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :year %>
+    <%= f.select :year, ['Freshman','Sophomore', "Pre Junior", 'Junior', "Senior"] %>
+  </div>
+  <div class="field">
+    <%= f.label :major %>
+    <%= f.select :major, ['Business','Engineering', "Nursing", 'Media Arts and Design'] %>
+  </div>
+  <div class="field">
+    <%= f.label :looking_for_a_place %>
+    <%= f.boolean :looking_for_a_place %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_and_clubs %>
+    <%= f.text_area :activities_and_clubs %>
+  </div>
+  <div class="field">
+    <%= f.label :open_to_roommates %>
+    <%= f.boolean :open_to_roommates %>
+  </div>
+  <div class="field">
+    <%= f.label :price_range %>
+    <%= f.number_field :price_range %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
