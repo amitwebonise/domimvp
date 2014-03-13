@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :major %>
-    <%= f.select :major, ['Business','Engineering', "Nursing", 'Media Arts and Design'] %>
+    <%= f.select :major, ['Business','Engineering', "Nursing", 'Media Arts and Design', "Other"] %>
   </div>
   <div class="field">
-    <%= f.label :looking_for_a_place %>
-    <%= f.boolean :looking_for_a_place %>
+    <%= f.label :looking_for_place %>
+    <%= f.check_box :looking_for_place %>
   </div>
   <div class="field">
     <%= f.label :activities_and_clubs %>
@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :open_to_roommates %>
-    <%= f.boolean :open_to_roommates %>
+    <%= f.check_box :open_to_roommates %>
   </div>
   <div class="field">
     <%= f.label :price_range %>
