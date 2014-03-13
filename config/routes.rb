@@ -12,6 +12,7 @@ Domimvp::Application.routes.draw do
     resources :appointments 
   end
   
+  resources :profile
 
   resources :subletters
 
