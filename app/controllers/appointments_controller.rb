@@ -6,6 +6,9 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    @appointment = Appointment.find(params[:id])
+    @user_who_commented = current_user
+    @comment = Comment.build_from( @appointment, @user_who_commented.id, "Hey guys this is my comment!" )
   end
 
   def update
@@ -16,7 +19,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @listing = Listing.find(params[:listing_id])
-    @appointment = @listing.appointments.new
+    @appointment = @listing.appointments.new  
   end
 
   def create
