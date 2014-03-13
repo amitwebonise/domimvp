@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312040550) do
+ActiveRecord::Schema.define(version: 20140313031304) do
 
   create_table "appointments", force: true do |t|
     t.datetime "start_time"
@@ -69,6 +69,22 @@ ActiveRecord::Schema.define(version: 20140312040550) do
 
   add_index "listings", ["property_id"], name: "index_listings_on_property_id"
   add_index "listings", ["user_id"], name: "index_listings_on_user_id"
+
+  create_table "profiles", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "year"
+    t.string   "major"
+    t.text     "activities_and_clubs"
+    t.boolean  "looking_for_place"
+    t.boolean  "open_to_roommates"
+    t.decimal  "price_range"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "properties", force: true do |t|
     t.integer  "total_bedrooms"

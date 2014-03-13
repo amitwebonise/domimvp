@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  year: MyString
+  major: MyString
+  activities_and_clubs: MyText
+  looking_for_place: false
+  open_to_roommates: false
+  price_range: 9.99
+  user_id: 
+
+two:
+  first_name: MyString
+  last_name: MyString
+  year: MyString
+  major: MyString
+  activities_and_clubs: MyText
+  looking_for_place: false
+  open_to_roommates: false
+  price_range: 9.99
+  user_id: 
