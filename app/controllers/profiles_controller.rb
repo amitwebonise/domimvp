@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
   end
 
   def edit
@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.user = current_user
+    @user.profile = current_user
 
     if @profile.save
       redirect_to homes_index_path
