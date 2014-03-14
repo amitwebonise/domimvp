@@ -14,15 +14,17 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    @user = current_user
     @profile = Profile.new
-    @profile.user = current_user
+    @user.profile = current_user.profile
   end
 
   def create
-    @profile = Profile.new(profile_params)
-    @user.profile = current_user
+    @user = current_user
+    @profile = Profile.new
+    @user.profile = current_user.profile
 
-    if @profile.save
+    if @user.profile.save
       redirect_to homes_index_path
     else
       render :new
