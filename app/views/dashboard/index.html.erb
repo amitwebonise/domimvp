@@ -1,11 +1,17 @@
-<div>
-  <ul class="dashboard-appointment">
+
+<div class="dashboard">
+  <ul>
     <% @listings.each do |listing| %>  
       <% listing.appointments.each do |appointment| %>
-          <li><%= link_to "Appointment pending", listing_appointment_path(listing, appointment) %></li>
-          <li><%= time_tag (appointment.start_time) %></li>
-          <li><%= time_tag (appointment.end_time) %></li>
+          <div class="dashboard-appointment">
+            <li><%= link_to "Appointment pending", listing_appointment_path(listing, appointment) %></li>
+            <li><%= time_tag (appointment.start_time) %></li>
+            <li><%= time_tag (appointment.end_time) %></li>
+          </div>
       <% end %>   
     <% end %> 
   </ul>
+</div>
+<div class="sidebar-calendar">
+  <%= image_tag("calendar.gif") %>
 </div>

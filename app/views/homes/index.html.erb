@@ -3,16 +3,46 @@
     <%= render "listings/listings" %>
   </div>
 <% else %>
-  <div class="container">
-    <div id="sidebar">
-      <%= image_tag("domiapp.png", :alt => "Domi") %>
-      <h3>The Easiest Way to Find or Sublet an apartment.</h3>
-        <p><%= link_to "Sign up", new_user_registration_path %></p>
-        <p><%= link_to "Signin", new_user_session_path %></p>
-    </div>
-    <div class="welcome">
-      <h1>Domi is making College <br>Housing Easy</h1>
-      <h3>What We Do</h3>
+  <div class="header navbar-fixed-top">
+      <li><%= link_to "Mission", mission_index_path %></li>
+      <li><%= link_to "About", about_index_path %></li>
+      <li><%= link_to image_tag("domiapp.png"), root_path, id: "logo" %></li>
+      <li><%= link_to "FAQ", faq_index_path %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up" %></li>
+  </div>
+  <div class="home-page">
+     <div class="opening">
+      <div class="callout">
+        <h1>Take a seat Craigslist</h1>
+        <h3>Domi is the easiest way to get an <br> apartment around campus</h3>
+        <p><%= link_to "Blow my mind",new_user_registration_path, id: "sign-up" %></p>
+      </div>
+      <div id="video">
+          <iframe width="560" height="315" src="//www.youtube.com/embed/9MG-xlvYtFY" frameborder="0" allowfullscreen></iframe>
+      </div>
+     </div>
+    <div class="features-container">
+      <div class="features">
+        <ul>
+          <li><%= image_tag("display.png") %></li>
+          <h3>Create account and make profile</h3>
+          <p>Signing up for Domi is super easy! Then fill out your profile with a little about you.</p>
+        </ul>
+      </div>
+      <div class="features">
+        <ul>
+          <li><%= image_tag("photo.png") %></li>
+          <h3>Claim your place and post a listing</h3>
+          <p>Enter in your humble abode. Afterwards, list your place for other students to see.</p>
+        </ul>
+      </div>
+      <div class="features">
+        <ul>
+          <li><%= image_tag("female-user.png") %></li>
+          <h3>Roommates? Open houses? Get it done</h3>
+          <p>Domi is designed to make getting a place as fast as possible.</p>
+        </ul>
+      </div>
     </div>
   </div>
 <% end %>
