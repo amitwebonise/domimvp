@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+  <div class="field"> 
+    <%= image_tag(@profile.avatar_url) if @profile.avatar? %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+      <%= f.label :remove_avatar %>
+      <%= f.check_box :remove_avatar %>
+  </div>
   <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
