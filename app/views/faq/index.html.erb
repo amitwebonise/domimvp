@@ -1,2 +1,18 @@
-<h1>Faq#index</h1>
-<p>Find me in app/views/faq/index.html.erb</p>
+<div class="header">
+    <li><%= link_to "Mission", mission_index_path %></li>
+    <li><%= link_to "About", about_index_path %></li>
+    <li><%= link_to image_tag("domiapp.png"), root_path, id: "logo" %></li>
+    <li><%= link_to "FAQ", faq_index_path %></li>
+    <li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up" %></li>
+</div>
+<div class="main">
+  <p><%= image_tag("college-map.jpg", id: "college-map") %></p>
+  <h1>Our mission is to make housing easy for every student.</h1>
+  <p>Explanation</p>
+  <h2>Why a mission?</h2>
+  <p>Explanation</p>
+  <h2>Why such a big mission?</h2>
+  <p>Explanation</p>
+  <h2>Where does it start?</h2>
+  <p>Explanation</p>
+</div>

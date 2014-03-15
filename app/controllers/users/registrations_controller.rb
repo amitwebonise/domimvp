@@ -12,4 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def edit
     super
   end
+
+  def after_user_signed_in
+  end
 end
