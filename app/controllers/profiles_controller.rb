@@ -1,5 +1,14 @@
 class ProfilesController < ApplicationController
+  skip_before_filter :make_profile, :only => [:new, :create]
+
   def index
+    if params[:filter] == 'roommate'
+      @profiles = Profile.roomates
+    elsif params[:filter] == 'looking'
+      @profiles = Profile.looking
+    else
+      @profiles = Profile.all
+    end
   end
 
   def show
@@ -14,17 +23,12 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @user = current_user
     @profile = Profile.new
-    @user.profile = current_user.profile
   end
 
   def create
-    @user = current_user
-    @profile = Profile.new
-    @user.profile = current_user.profile
-
-    if @user.profile.save
+    current_user.profile = Profile.new(profile_params)
+    if current_user.profile.save
       redirect_to homes_index_path
     else
       render :new

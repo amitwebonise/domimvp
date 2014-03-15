@@ -1,5 +1,6 @@
 Domimvp::Application.routes.draw do
   
+  get "comments/create"
   get "faq/index" 
   get "about/index"
   get "mission/index"
@@ -12,8 +13,13 @@ Domimvp::Application.routes.draw do
   resources :tenants
   resources :dashboard, only: [:index]
 
+  resources :appointments do
+      resources :comments
+  end
+
+
   resources :listings do
-    resources :appointments 
+    resources :appointments
   end
   
   resources :profiles

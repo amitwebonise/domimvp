@@ -2,9 +2,17 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_filter :make_profile
+
 
   private
   
+  def make_profile
+    if user_signed_in? and current_user.profile.nil?
+      redirect_to new_profile_path
+    end
+  end
+
   #-> Prelang (user_login:devise)
   def require_user_signed_in
     unless user_signed_in?

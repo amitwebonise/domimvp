@@ -13,7 +13,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem "seed_dumper"
 gem 'nested_form'
-gem 'acts_as_commentable_with_threading'
+gem 'acts_as_commentable'
 
 
 group :doc do
@@ -33,6 +33,7 @@ gem 'binding_of_caller'
 group :development do 
   gem 'sqlite3'
   gem "railroad"
+  gem "pry"
 end
 
 group :production do 

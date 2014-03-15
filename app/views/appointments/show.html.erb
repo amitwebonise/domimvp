@@ -1,2 +1,12 @@
-<h1>Appointments#show</h1>
-<p>Find me in app/views/appointments/show.html.erb</p>
+<p><%= @appointment.start_time %></p>
+<p><%= @appointment.listing.property.address %></p>
+
+<p>Comments</p>
+<% @appointment.comments.each do |comment| %>
+  <%= comment.comment %>
+<% end %>
+
+<%= form_for [@appointment, @comment] do |f| %>
+  <%= f.text_area :comment %>
+  <%= f.submit "New message" %>
+<% end %> 

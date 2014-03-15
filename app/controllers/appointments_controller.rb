@@ -7,8 +7,7 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
-    @user_who_commented = current_user
-    @comment = Comment.build_from( @appointment, @user_who_commented.id, "Hey guys this is my comment!" )
+    @comment = Comment.new
   end
 
   def update

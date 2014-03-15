@@ -1,2 +1,12 @@
-<h1>Profile#index</h1>
-<p>Find me in app/views/profile/index.html.erb</p>
+<%= link_to "Roommates", profiles_path(:filter => :roommates) %>
+<%= link_to "Looking", profiles_path(:filter => :looking_for_place) %>
+
+<% @profiles.each do |profile| %>
+  <%= profile.first_name %>
+  <%= profile.last_name %>
+  <%= profile.major %>
+  <%= profile.year %>
+  <%= profile.open_to_roommates %>
+  <%= profile.looking_for_place %>
+  <%= profile.user.listings.count %>
+<% end %>
