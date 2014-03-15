@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315182553) do
+ActiveRecord::Schema.define(version: 20140315202822) do
 
   create_table "appointments", force: true do |t|
     t.datetime "start_time"
@@ -95,6 +95,11 @@ ActiveRecord::Schema.define(version: 20140315182553) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "zip_code"
+    t.string   "city"
+    t.string   "state"
   end
 
   add_index "properties", ["listing_id"], name: "index_properties_on_listing_id"

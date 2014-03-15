@@ -14,6 +14,7 @@ gem "mini_magick"
 gem "seed_dumper"
 gem 'nested_form'
 gem 'acts_as_commentable'
+gem "geocoder"
 
 
 group :doc do
