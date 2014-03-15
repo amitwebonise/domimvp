@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
   def create
     current_user.profile = Profile.new(profile_params)
     if current_user.profile.save
-      redirect_to homes_index_path
+      redirect_to root_path
     else
       render :new
     end

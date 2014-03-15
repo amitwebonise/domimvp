@@ -1,10 +1,9 @@
 Domimvp::Application.routes.draw do
   
   get "comments/create"
-  get "faq/index" 
-  get "about/index"
-  get "mission/index"
-  get 'exit', to: 'sessions#destroy', as: :logout
+  get "faq" => "faq#index", as: :faq_index
+  get "about" => "about#index", as: :about_index
+  get "mission" => "mission#index", as: :mission_index
   resources :properties do
     resource :image, only: [:create]
     resources :rooms
