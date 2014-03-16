@@ -1,4 +1,21 @@
 class Property < ActiveRecord::Base
+  validates :total_bedrooms, presence: true
+  validates :total_bedrooms, numericality: true
+  validates :total_bathrooms, presence: true
+  validates :total_bathrooms, numericality: true
+  validates :address, presence: true
+  validates :address, length: { minimum: 5 }
+  validates :description, presence: true
+  validates :address, length: { minimum: 10 }
+  validates :commute_to_campus_in_minutes, presence: true
+  validates :zip_code, presence: true
+  validates :zip_code, numericality: true
+  validates :city, presence: true
+  validates :city, length: { minimum: 5 }
+  validates :state, presence: true
+  validates :state, length: { minimum: 1 }
+
+
   has_one :listing
   has_many :rooms
   has_many :images, :as => :attachable
@@ -11,8 +28,5 @@ class Property < ActiveRecord::Base
 end
 
 
-
-
-  
 
   

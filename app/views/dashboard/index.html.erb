@@ -4,7 +4,7 @@
       <% listing.appointments.each do |appointment| %>
           <div class="dashboard-appointment">
             <li><%= link_to "Potential appointment", listing_appointment_path(listing, appointment) %></li>
-            <li><%= time_tag (appointment.start_time) %></li>
+            <li><%= time_tag (appointment.time) %></li>
           </div>
       <% end %>   
     <% end %> 

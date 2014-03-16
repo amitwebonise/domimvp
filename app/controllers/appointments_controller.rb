@@ -42,7 +42,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:start_time, :end_time, :tenant, :subletter, :listing_id)
+    params.require(:appointment).permit(:start_time, :end_time, :tenant, :subletter, :listing_id, :time)
   end
 
 end
