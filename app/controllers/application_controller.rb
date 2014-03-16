@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
   
   def make_profile
-    if user_signed_in? and current_user.profile.nil?
+    if user_signed_in? and current_user.profile.first_name.nil?
       redirect_to new_profile_path
     end
   end

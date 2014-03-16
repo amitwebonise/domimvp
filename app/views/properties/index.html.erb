@@ -1,14 +1,15 @@
-<h1>Here is the <%= pluralize(1, "property") %> you have added</h1>
-
-<div class="property">
-    <% @properties.each do |property| %>
-      <ul>  
+<div class="property-container">
+  <% @properties.each do |property| %>
+    <div class="property">
+      <ul>
+        <li>
+          <%= image_tag(property.images.first.photo_url) %>
+        </li>  
         <li><%= property.address %></li>
-        <li><%= property.description %></li>
         <li><%= property.total_bedrooms %> bedrooms</li>
         <li><%= property.total_bathrooms %> bathrooms</li>
-        <li><%= property.commute_to_campus_in_minutes %> minute commute to campus</li>
       </ul>
       <p><%= link_to 'Learn More', property %></p>
-    <% end %>
+    </div>
+  <% end %>
 </div>

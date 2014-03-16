@@ -32,5 +32,7 @@
   <%= @listing.user_id %>
 </p>
 
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@listing.property.latitude}%2C#{@listing.property.longitude}" %>
+
 <%= link_to 'Edit', edit_listing_path(@listing, @appointment) %> |
 <%= link_to 'Back', listings_path %>

@@ -15,6 +15,8 @@ gem "seed_dumper"
 gem 'nested_form'
 gem 'acts_as_commentable'
 gem "geocoder"
+gem 'gmaps4rails'
+gem "underscore-rails"
 
 
 group :doc do
