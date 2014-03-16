@@ -17,6 +17,7 @@ gem 'acts_as_commentable'
 gem "geocoder"
 gem 'gmaps4rails'
 gem "underscore-rails"
+gem 'fullcalendar-rails'
 
 
 group :doc do
