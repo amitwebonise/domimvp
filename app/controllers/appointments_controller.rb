@@ -8,7 +8,6 @@ class AppointmentsController < ApplicationController
   def show
     @appointment = Appointment.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.where("sender = ?", [1,2]).where("receiver=?",[1,2]).sort("createdAt ASC")
   end
 
   def update
