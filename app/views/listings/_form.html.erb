@@ -10,14 +10,14 @@
       </ul>
     </div>
   <% end %>
-  
+  <div>
+    <p><%= link_to "Edit property", edit_property_path(@listing, @property) %></p>
+  </div>  
   <%= f.collection_select(:property_id, Property.all, :id, :address) %>
   <div class="field">
-    <%= f.label :open_to_student_only %><br>
-    <%= f.check_box :open_to_student_only %>
-  </div>
-  <div class="field">
+    <%= f.label :open_to_student_only, "Student only?" %>         |
     <%= f.label :rent_per_month %><br>
+    <%= f.check_box :open_to_student_only %>
     <%= f.text_field :rent_per_month %>
   </div>
   <div class="field">
@@ -29,6 +29,6 @@
     <%= f.text_field :schedule, :placeholder => "Ex. Mondays after 5pm" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :id => "submit-button" %>
   </div>
 <% end %></div></div></div>

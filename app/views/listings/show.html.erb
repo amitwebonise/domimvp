@@ -1,38 +1,27 @@
-<p>
-  <% @listing.property.images.each do |image| %>
-    <%= image_tag(image.photo_url) %>
-  <% end %>
-</p>
+<div class="google-maps">
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x400&sensor=false&zoom=16&markers=#{@listing.property.latitude}%2C#{@listing.property.longitude}" %>
+  <h3>Listed by <%= @listing.user.profile.first_name %> <%= @listing.user.profile.last_name %></h3>
+</div>
 
-<p>
-  <%= link_to "Attend an open house", new_listing_appointment_path(@listing) %>
-</p>
-
-<p>
-  <%= @listing.property.address %>
-</p>
-
-<p>
-  <%= @listing.open_to_student_only %>
-</p>
-
-<p>
-  <%= number_to_currency(@listing.rent_per_month) %>
-</p>
-
-<p>
-  <%= time_tag Date.today(@listing.is_available) %>
-</p>
-
-<p>
-  <%= @listing.schedule %>
-</p>
-
-<p>
-  <%= @listing.user_id %>
-</p>
-
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@listing.property.latitude}%2C#{@listing.property.longitude}" %>
-
-<%= link_to 'Edit', edit_listing_path(@listing, @appointment) %> |
-<%= link_to 'Back', listings_path %>
+<div class="listing-container">
+  <ul class="photo-gallery">
+    <% @listing.property.images.each do |image| %>
+      <li><%= image_tag(image.photo_url(:thumb)) %></li>
+    <% end %>
+  </ul>
+  <ul>
+    <li><%= @listing.property.address %></li>
+    <li><%= number_to_currency(@listing.rent_per_month) %> per month</li>
+    <li>Open to sublet starting <%= time_tag Date.today(@listing.is_available) %></li>
+    <li><%= @listing.property.description %></li>
+    <li><%= @listing.property.total_bedrooms %> bedrooms</li>
+    <li><%= @listing.property.total_bathrooms %> bathrooms</li>
+    <li><%= @listing.property.commute_to_campus_in_minutes %> minutes to campus</li>
+    <li>Free to show <%= @listing.schedule %></li>
+  </ul>
+  <p><%= link_to "Attend an open house", new_listing_appointment_path(@listing) %></p>
+  <div class="navigation">
+    <%= link_to 'Edit', edit_listing_path(@listing, @appointment) %> |
+    <%= link_to 'Back', listings_path %>
+  </div>
+</div>

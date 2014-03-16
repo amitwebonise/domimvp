@@ -4,6 +4,57 @@
   background-color: white;
 }
 
+.form {
+  background-color: white;
+  border: 1px solid lightgray;
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.form p {
+  background-color: #025488;
+  padding: 5px;
+  width: 30%;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.form a {
+  color: white;
+  font-family: Lucida Grande;
+  font-size: 18px;
+}
+
+.form button {
+  background-color: #025488;
+  padding: 5px;
+  width: 30%;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.field {
+  padding: 5px 0;
+}
+
+.field input {
+  width: 100px;
+}
+
+#submit-button {
+  background-color: #025488;
+  padding: 5px;
+  width: 30%;
+  margin: 10px auto;
+  border-radius: 5px;
+  color: white;
+  font-family: Lucida Grande;
+  font-size: 18px;
+}
+
 
 /*home page before sign in*/
 
@@ -287,7 +338,7 @@
   margin: 15px 10px 0 20px;
   padding: 10px 0;
   float: left;
-  height: 380px;
+  height: 390px;
   li {
     list-style-type: none;
     text-decoration: none;
@@ -322,6 +373,48 @@
 
 .individual-listing {
   padding: 10px;
+}
+
+.listing-container {
+  width: 60%;
+  padding: 20px;
+}
+
+.listing-container p {
+  background-color: #025488;
+  padding: 5px;
+  width: 32%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.listing-container p a {
+  color: white;
+  font-family: Lucida Grande;
+  font-size: 18px;
+}
+
+.listing-container li {
+  list-style-type: none;
+  font-family: Lucida Grande;
+  font-size: 15px;
+  padding: 1px;
+}
+
+.photo-gallery li {
+  display: inline-block;
+}
+
+.google-maps {
+  float: right;
+  text-align: center;
+  width: 40%;
+}
+
+.google-maps h3 {
+  color: #025488;
+  font-family: Lucida Grande;
+  font-size: 20px;
 }
 
 /*end of listing*/

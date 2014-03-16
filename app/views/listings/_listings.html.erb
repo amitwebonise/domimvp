@@ -2,7 +2,7 @@
     <% @recent_listings.each do |listing| %>
     <div class="listing">
       <ul>
-        <li><%= image_tag(listing.property.images.first.photo_url) %></li>
+        <li><%= image_tag(listing.property.images.first.photo_url(:thumb)) %></li>
         <li><%= listing.property.address %></li>
         <li><%= number_to_currency(listing.rent_per_month) %> per month</li>
         <li>Free to show it <%= listing.schedule %></li>
