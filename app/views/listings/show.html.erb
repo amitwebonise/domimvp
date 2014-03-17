@@ -1,6 +1,11 @@
 <div class="google-maps">
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x400&sensor=false&zoom=16&markers=#{@listing.property.latitude}%2C#{@listing.property.longitude}" %>
-  <h3>Listed by <%= @listing.user.profile.first_name %> <%= @listing.user.profile.last_name %></h3>
+  <h2>
+    <%= link_to(@listing.user.profile) do %>
+      <%= image_tag(@listing.user.profile.avatar_url) %><br>
+      <strong><%= @listing.user.profile.first_name %> <%= @listing.user.profile.last_name %></strong>
+    <% end %>
+  </h2>
 </div>
 
 <div class="listing-container">

@@ -63,6 +63,7 @@
   margin: 0 auto;
   text-align: center;
   padding: 10px 0;
+  width: 100%;
 }
 
 .header li {
@@ -98,6 +99,7 @@
   background: url("college-castle.jpg") no-repeat;
   background-position: center-top;
   margin-top: 100px;
+  width: 100%;
 }
 
 .opening {
@@ -334,11 +336,11 @@
   border: 1px solid lightgray;
   border-radius: 5px;
   background-color: white;
-  width: 250px;
+  width: 340px;
   margin: 15px 10px 0 20px;
-  padding: 10px 0;
+  padding: 5px 0;
   float: left;
-  height: 390px;
+  height: 330px;
   li {
     list-style-type: none;
     text-decoration: none;
@@ -409,6 +411,7 @@
   float: right;
   text-align: center;
   width: 40%;
+  height: 30%;
 }
 
 .google-maps h3 {
