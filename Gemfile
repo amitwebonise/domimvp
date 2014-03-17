@@ -18,6 +18,7 @@ gem "geocoder"
 gem 'gmaps4rails'
 gem "underscore-rails"
 gem 'fullcalendar-rails'
+gem 'font-awesome-sass'
 
 
 group :doc do
