@@ -3,7 +3,7 @@
     <%= render "listings/listings" %>
   </div>
 <% else %>
-  <div class="header navbar-fixed-top">
+  <div class="header">
       <li><%= link_to "Mission", mission_index_path %></li>
       <li><%= link_to "About", about_index_path %></li>
       <li><%= link_to image_tag("domiapp.png"), root_path, id: "logo" %></li>
@@ -43,6 +43,7 @@
           <p>Domi is designed to make getting a place as fast as possible.</p>
         </ul>
       </div>
+      <br><br><br><p><%= link_to "Get started", new_user_registration_path, id: "get-started" %></p>
     </div>
   </div>
 <% end %>
