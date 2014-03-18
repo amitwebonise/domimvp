@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable
 
+  has_many :appointments, foreign_key: 'requester_id'
+
   #->Prelang (user_login/devise)
   has_many :listings
   has_many :properties

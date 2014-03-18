@@ -28,7 +28,6 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    make_tenant
     @listing = current_user.listings.build(listing_params)
 
     respond_to do |format|
@@ -77,8 +76,4 @@ class ListingsController < ApplicationController
       params.require(:listing).permit(:open_to_student_only, :rent_per_month, :is_available, :user_id, :property_id, :images, :schedule)
     end
 
-    def make_tenant
-      current_user.update_attribute(:type, 'Tenant')
-      current_user.save
-    end
 end

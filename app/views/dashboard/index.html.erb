@@ -1,12 +1,22 @@
 <div class="dashboard">
+  <h2>Your listings</h2>
   <ul>
-    <% @listings.each do |listing| %>  
+    <% current_user.listings.each do |listing| %>
       <% listing.appointments.each do |appointment| %>
           <div class="dashboard-appointment">
             <li><%= link_to "Potential appointment", listing_appointment_path(listing, appointment) %></li>
             <li><%= time_tag(appointment.time) %></li>
           </div>
       <% end %>   
-    <% end %> 
+    <% end %>
+  </ul>
+  <h2>Your appointments</h2>
+  <ul>
+    <% current_user.appointments.each do |appointment| %>
+          <div class="dashboard-appointment">
+            <li><%= link_to "Potential appointment", listing_appointment_path(appointment.listing, appointment) %></li>
+            <li><%= time_tag(appointment.time) %></li>
+          </div>
+      <% end %>
   </ul>
 </div>

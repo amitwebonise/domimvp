@@ -24,6 +24,7 @@ class AppointmentsController < ApplicationController
   def create
     @listing = Listing.find(params[:listing_id])
     @appointment = @listing.appointments.new(appointment_params)
+    @appointment.requester = current_user
     
     if @appointment.save
      redirect_to @listing, notice: 'Your appointment request was successfully sent.'
@@ -42,7 +43,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:start_time, :end_time, :tenant, :subletter, :listing_id, :time)
+    params.require(:appointment).permit(:start_time, :end_time, :requester, :listing_id, :time)
   end
 
 end
