@@ -19,6 +19,7 @@ gem 'gmaps4rails'
 gem "underscore-rails"
 gem 'fullcalendar-rails'
 gem 'font-awesome-sass'
+gem 'has_scope'
 
 
 group :doc do

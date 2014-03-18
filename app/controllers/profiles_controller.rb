@@ -1,14 +1,12 @@
 class ProfilesController < ApplicationController
   skip_before_filter :make_profile, :only => [:new, :create]
+  has_scope :open_to_roommates, type: :boolean
+  has_scope :looking_for_place, type: :boolean
+
+
 
   def index
-    if params[:filter] == 'roommate'
-      @profiles = Profile.roomates
-    elsif params[:filter] == 'looking'
-      @profiles = Profile.looking
-    else
-      @profiles = Profile.all
-    end
+    @profiles = apply_scopes(Profile).all
   end
 
   def show
