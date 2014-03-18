@@ -1,0 +1,12 @@
+<%# navigation styled for Zurb Foundation 5 %>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name"><%= link_to image_tag("domiapp.png",  width: 70, height: 70), defined?(root_path) ? root_path : "#", class: "navbar-brand" %></li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+  <div class="top-bar-section">
+    <ul>
+      <%= render 'layouts/navigation_links' %>
+    </ul>
+  </div>
+</nav>

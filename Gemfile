@@ -26,16 +26,14 @@ gem 'paper_trail', '~> 3.0.1'
 
 
 
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
 gem 'bundler'
-gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
-gem 'bootstrap-sass-extras'
 gem 'devise', github: 'plataformatec/devise'
+gem 'foundation-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'better_errors', group: :development
@@ -45,6 +43,7 @@ group :development do
   gem 'sqlite3'
   gem "railroad"
   gem "pry"
+  gem 'rails_layout'
 end
 
 group :production do 
