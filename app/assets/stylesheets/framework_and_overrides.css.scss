@@ -2,6 +2,13 @@
 @import "foundation";
 
 // override for the 'Home' navigation link
+
+.top-bar {
+  height: 60px;
+}
+.top-bar img {
+  padding-top: 7.5px;
+}
 .top-bar .name {
   font-size: rem-calc(13);
   line-height: 45px; }
