@@ -2,7 +2,7 @@ Domimvp::Application.routes.draw do
   
   get "comments/create"
   get "faq" => "faq#index", as: :faq_index
-  get "about" => "about#index", as: :about_index
+  get "how-it-works" => "about#index", as: :about_index
   get "mission" => "mission#index", as: :mission_index
   
   resources :properties do

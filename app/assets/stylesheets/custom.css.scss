@@ -125,6 +125,11 @@
   top: 30px;
 }
 
+#video1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
 .callout {
   float: right;
   margin-right: 15px;
@@ -462,9 +467,8 @@
 
 
 /*navbar */
-
-.top-bar {
-  height: 75px;
+.nav a {
+  color: #025488;
 }
 
 .navbar-brand {
@@ -481,11 +485,31 @@
   height: 100%;
   width: 100%;
   background-color: white;
+  padding: 30px;
 }
 
-#college-map {
+.main h3 img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main p img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+#college-map  {
   height: 400px;
 }
+
+#college-map img {
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
 
 
 /*end of mission*/
