@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable
 
+  has_paper_trail
+
   has_many :appointments, foreign_key: 'requester_id'
 
   #->Prelang (user_login/devise)

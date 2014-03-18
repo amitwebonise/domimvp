@@ -4,4 +4,5 @@ class Profile < ActiveRecord::Base
   scope :open_to_roommates, -> { where(open_to_roommates: true)}
   scope :looking_for_place, -> { where(looking_for_place: true)}
   mount_uploader :avatar, AvatarUploader
+  has_paper_trail
 end

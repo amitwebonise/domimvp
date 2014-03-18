@@ -22,6 +22,8 @@ gem 'font-awesome-sass'
 gem 'has_scope'
 gem "figaro"
 gem "gibbon"
+gem 'paper_trail', '~> 3.0.1'
+
 
 
 
