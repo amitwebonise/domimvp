@@ -5,6 +5,6 @@ module ApplicationHelper
 
 
   def boolean_to_s(value)
-    value ? "Yes" : "No"
+    value ? "Yes" : "Maybe soon!"
   end 
 end

@@ -4,6 +4,7 @@ Domimvp::Application.routes.draw do
   get "faq" => "faq#index", as: :faq_index
   get "about" => "about#index", as: :about_index
   get "mission" => "mission#index", as: :mission_index
+  
   resources :properties do
     resource :image, only: [:create]
     resources :rooms
