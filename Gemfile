@@ -20,6 +20,7 @@ gem "underscore-rails"
 gem 'fullcalendar-rails'
 gem 'font-awesome-sass'
 gem 'has_scope'
+gem "figaro"
 
 
 group :doc do
