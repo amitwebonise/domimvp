@@ -23,8 +23,7 @@ gem 'has_scope'
 gem "figaro"
 gem "gibbon"
 gem 'paper_trail', '~> 3.0.1'
-gem "fog"
-
+gem "fog", "~> 1.3.1"
 
 
 group :doc do

@@ -14,17 +14,19 @@
   </div>  
   <%= f.collection_select(:property_id, Property.all, :id, :address) %>
   <div class="field">
-    <%= f.label :open_to_student_only, "Student only?" %>         |
-    <%= f.label :rent_per_month %><br>
+    <%= f.label :open_to_student_only, "For students only?" %>
     <%= f.check_box :open_to_student_only %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_per_month %>
     <%= f.text_field :rent_per_month %>
   </div>
   <div class="field">
-    <%= f.label :is_available %><br>
+    <%= f.label :is_available %>
     <%= f.datetime_select :is_available %>
   </div>
   <div class="field">
-    <%= f.label :schedule, "When are you open to show it?" %><br>
+    <%= f.label :schedule, "When are you open to show it?" %>
     <%= f.text_field :schedule, :placeholder => "Ex. Mondays after 5pm" %>
   </div>
   <div class="actions">
