@@ -1,6 +1,5 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  include CarrierWaveDirect::Uploader
 
   process :resize_to_fit => [400, 400]
 
