@@ -55,6 +55,8 @@ class User < ActiveRecord::Base
       :send_welcome => true
     })
 
+  end
+
   def remove_user_from_mailchimp
     mailchimp = Gibbon::API.new
     result = mailchimp.lists.unsubscribe({
