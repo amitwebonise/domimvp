@@ -7,8 +7,6 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = apply_scopes(Profile).all
-    @uploader = Profile.new.avatar
-    @uploader.success_action_redirect = new_profile_url
   end
 
   def show
@@ -35,13 +33,12 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
-    @uploader = Profile.new.avatar
-    @uploader.success_action_redirect = new_profile_url
   end
 
   def create
-    current_user.profile = Profile.new(profile_params)
-    if current_user.profile.save
+    @profile = Profile.new(profile_params)
+    
+    if @profile.save
       redirect_to root_path
     else
       render :new

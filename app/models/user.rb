@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
  before_create :create_profile
- after_create :add_user_to_mailchimp
-  before_destroy :remove_user_from_mailchimp
+ # after_create :add_user_to_mailchimp
+ #  before_destroy :remove_user_from_mailchimp
 
 
   # Include default devise modules. Others available are:
@@ -43,31 +43,31 @@ class User < ActiveRecord::Base
   end
 
 
-  def add_user_to_mailchimp
-    return if email.upcase == 'madeleke13@gmail.com'.upcase #.include?(ENV['madeleke13@gmail.com'])
+  # def add_user_to_mailchimp
+  #   return if email.upcase == 'madeleke13@gmail.com'.upcase #.include?(ENV['madeleke13@gmail.com'])
     
-    mailchimp = Gibbon::API.new
-    result = mailchimp.lists.subscribe({
-      :id => ENV['MAILCHIMP_LIST_ID'],
-      :email => {:email => self.email},
-      :double_optin => false,
-      :update_existing => true,
-      :send_welcome => true
-    })
+  #   mailchimp = Gibbon::API.new
+  #   result = mailchimp.lists.subscribe({
+  #     :id => ENV['3204fa9698'],
+  #     :email => {:email => self.email},
+  #     :double_optin => false,
+  #     :update_existing => true,
+  #     :send_welcome => true
+  #   })
 
-  end
+  # end
 
-  def remove_user_from_mailchimp
-    mailchimp = Gibbon::API.new
-    result = mailchimp.lists.unsubscribe({
-      :id => ENV['MAILCHIMP_LIST_ID'],
-      :email => {:email => self.email},
-      :delete_member => true,
-      :send_goodbye => false,
-      :send_notify => true
-    })
+  # def remove_user_from_mailchimp
+  #   mailchimp = Gibbon::API.new
+  #   result = mailchimp.lists.unsubscribe({
+  #     :id => ENV['3204fa9698'],
+  #     :email => {:email => self.email},
+  #     :delete_member => true,
+  #     :send_goodbye => false,
+  #     :send_notify => true
+  #   })
 
-    Rails.logger.info("Unsubscribed #{self.email} from MailChimp") if result
-  end
+  #   Rails.logger.info("Unsubscribed #{self.email} from MailChimp") if result
+  # end
 
 end
