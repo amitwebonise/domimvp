@@ -11,10 +11,11 @@
     </div>
   <% end %>
   <div class="field">
-    <%= direct_upload_form_for @uploader do |f| %>
-      <%= f.file_field :photo %>
-      <%= f.submit "Upload image" %>
+    <% f.fields_for :images do |image_form| %>
+      <%= image_form.file_field :photo %>
+      <%= image_form.link_to_remove "Remove this attatchment" %>
     <% end %>
+    <p><%= f.link_to_add "Add photo", :images %></p>
   </div>
   <div class="field">
     <%= f.label :total_bedrooms %><br>

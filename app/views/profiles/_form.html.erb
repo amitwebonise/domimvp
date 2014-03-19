@@ -11,11 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= direct_upload_form_for @uploader do |f| %>
-      <%= f.file_field :avatar %>
-      <%= f.submit "Upload image" %>
-    <% end %>
+  <div class="field"> 
+    <%= image_tag(@profile.avatar_url) if @profile.avatar? %>
+    <%= f.file_field :avatar %>
   </div>
   <div class="field">
       <%= f.label :remove_avatar %>

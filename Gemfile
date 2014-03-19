@@ -21,8 +21,7 @@ gem "figaro"
 gem "gibbon"
 gem 'paper_trail', '~> 3.0.1'
 gem "fog", "~> 1.3.1"
-gem 'carrierwave_direct'
-gem "sidekiq"
+
 
 
 group :doc do
