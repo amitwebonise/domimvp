@@ -7,6 +7,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'carrierwave_direct'
 gem "mini_magick"
 gem "seed_dumper"
 gem 'nested_form'

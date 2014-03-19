@@ -43,7 +43,8 @@ class User < ActiveRecord::Base
   end
 
   def add_user_to_mailchimp
-    return if email.include?(ENV['madeleke13@gmail.com'])
+    return if email.upcase == 'madeleke13@gmail.com'.upcase #.include?(ENV['madeleke13@gmail.com'])
+    
     mailchimp = Gibbon::API.new
     result = mailchimp.lists.subscribe({
       :id => ENV['MAILCHIMP_LIST_ID'],
