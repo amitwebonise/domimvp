@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
     end
   end
 
+
   def add_user_to_mailchimp
     return if email.upcase == 'madeleke13@gmail.com'.upcase #.include?(ENV['madeleke13@gmail.com'])
     
@@ -53,9 +54,6 @@ class User < ActiveRecord::Base
       :update_existing => true,
       :send_welcome => true
     })
-
-    Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
-  end
 
   def remove_user_from_mailchimp
     mailchimp = Gibbon::API.new
