@@ -10,6 +10,8 @@ class ImagesController < ApplicationController
   def create
     @property = Property.find(params[:property_id])
     @image = Image.new(image_params)
+    @uploader = Image.new.photo
+    @uploader.success_action_redirect = new_image_url
 
     respond_to do |format|
       if @image.save

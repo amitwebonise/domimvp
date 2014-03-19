@@ -12,6 +12,18 @@
   margin: 0 auto;
   padding: 10px 0;
   border-radius: 10px;
+  max-width: 300px;
+}
+
+.form1 {
+  background-color: white;
+  border: 1px solid lightgray;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 
 .form p {
@@ -64,6 +76,7 @@
   text-align: center;
   padding: 10px 0;
   width: 100%;
+  border-bottom: 5px solid #025488;
 }
 
 .header li {
@@ -74,6 +87,10 @@
   font-family: Lucida Grande;
   color: #025488;
   font-weight: bold;
+}
+
+.header a {
+  color: #025488;
 }
 
 #logo img {
@@ -110,13 +127,13 @@
 }
 
 .home-page {
-  background: url("college-castle.jpg") no-repeat;
-  background-position: center-top;
-  width: 100%;
+  background: url("college-castle.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
+
 .opening {
-  padding-bottom: 150px;
+  padding-bottom: 300px;
 }
 
 #video {
@@ -132,20 +149,29 @@
 
 .callout {
   float: right;
-  margin-right: 15px;
+  margin-right: 80px;
 }
 
 .callout h1 {
   font-size: 50px;
   font-family: Lucida Grande;
   color: white;
-  padding-top: 80px;
+  margin-top: 80px;
+  line-height: 1.1em;
+  background-color:rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 5px;
+  width: 300px;
 }
 
 .callout h3 {
   font-size: 26px;
   font-family: Lucida Grande;
   color: white;
+  background-color:rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 5px;
+  width: 440px;
 }
 
 .callout p {
@@ -203,8 +229,9 @@
   margin-top: 90px;
   padding: 20px;
   height: 100%;
-  width: 100%;
+  width: 20%;
   text-align: center;
+  margin: 0 auto;
 }
 
 .devise h2  { 
