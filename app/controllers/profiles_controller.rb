@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
     
     #@profile = Profile.new(profile_params)
     
-    if current_user.profile.update_attributes(profile_params)
+    if current_user.profile.update_attributes(profile_params) 
       redirect_to root_path
     else
       render :new
