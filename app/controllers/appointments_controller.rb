@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :get_listing
+  include Mandrill::Rails::WebHookProcessor
 
   def index
     @appointments = Appointment.all

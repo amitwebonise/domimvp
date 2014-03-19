@@ -7,7 +7,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem 'carrierwave'
-gem 'carrierwave_direct'
 gem "mini_magick"
 gem "seed_dumper"
 gem 'nested_form'
@@ -23,6 +22,7 @@ gem "gibbon"
 gem 'paper_trail', '~> 3.0.1'
 gem "fog", "~> 1.3.1"
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'mandrill-rails'
 
 
 

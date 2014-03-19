@@ -36,9 +36,10 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(profile_params)
     
-    if @profile.save
+    #@profile = Profile.new(profile_params)
+    
+    if current_user.profile.update_attributes(profile_params)
       redirect_to root_path
     else
       render :new
@@ -48,6 +49,6 @@ class ProfilesController < ApplicationController
   private 
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :year, :major, :activities_and_clubs, :looking_for_place, :open_to_roommates, :price_range, :avatar, :about)
+    params.require(:profile).permit(:first_name, :last_name, :year, :major, :activities_and_clubs, :looking_for_place, :open_to_roommates, :price_range, :avatar, :about, :remove_avatar)
   end
 end
