@@ -21,6 +21,7 @@ gem "figaro"
 gem "gibbon"
 gem 'paper_trail', '~> 3.0.1'
 gem "fog", "~> 1.3.1"
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 
 

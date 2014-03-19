@@ -1,5 +1,7 @@
 Domimvp::Application.routes.draw do
   
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "comments/create"
   get "faq" => "faq#index", as: :faq_index
   get "how-it-works" => "about#index", as: :about_index
