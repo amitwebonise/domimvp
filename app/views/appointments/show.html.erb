@@ -2,9 +2,12 @@
 <p><%= @appointment.listing.property.address %></p>
 
 <p>Comments</p>
-<% @appointment.comments.each do |comment| %>
-  <%= comment.comment %>
-<% end %>
+<ul>
+  <% @appointment.comments.each do |comment| %>
+    <li><%= image_tag(@profile.avatar_url, width: "50", height: "50") %> <%= comment.comment %></li>
+  <% end %>
+</ul>
+
 
 
 <%= form_for [@appointment, @comment] do |f| %>

@@ -9,6 +9,8 @@ class AppointmentsController < ApplicationController
   def show
     @appointment = Appointment.find(params[:id])
     @comment = Comment.new
+    @user = User.find(params[:id])
+    @profile = @user.profile
   end
 
   def update
