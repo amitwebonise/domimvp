@@ -1,5 +1,5 @@
 <p><%= @appointment.time %></p>
-<p><%= @appointment.listing.property.address %></p>
+<p><%= link_to @appointment.listing.property.address, listing_path %></p>
 
 <p>Comments</p>
 <ul>
