@@ -1,6 +1,3 @@
-<% if current_user.properties.nil? %>
-  <h1>Get on this my friend!</h1>
-<% else %>
 <div class="property-container">
   <% @current_user.properties.each do |property| %>
     <div class="property">
@@ -15,4 +12,3 @@
     </div>
   <% end %>
 </div>
-<% end %>
