@@ -9,7 +9,7 @@ class AppointmentsController < ApplicationController
   def show
     @appointment = Appointment.find(params[:id])
     @comment = Comment.new
-    @user = User.find(params[:id])
+    @user = current_user
     @profile = @user.profile
   end
 

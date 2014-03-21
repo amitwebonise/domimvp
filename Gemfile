@@ -58,3 +58,10 @@ gem 'jquery-rails'
 gem 'foundation-icons-sass-rails'
 
 
+
+# agreement:
+# -discuussin_id
+# -date_time_offer
+# -user_id
+
+
