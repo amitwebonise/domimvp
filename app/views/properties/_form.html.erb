@@ -13,8 +13,9 @@
   <div class="field">
     <%= f.fields_for :images do |image_form| %>
       <%= image_form.file_field :photo %>
-      <%= image_form.link_to_remove "Remove this attatchment" %>
+      <a><%= image_form.link_to_remove "Remove this attatchment" %></a>
     <% end %>
+    <a><%= f.link_to_add "Add photo", :images %></a>
   </div>
   <div class="field">
     <%= f.label :total_bedrooms %><br>

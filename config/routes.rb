@@ -6,6 +6,8 @@ Domimvp::Application.routes.draw do
   get "faq" => "faq#index", as: :faq_index
   get "how-it-works" => "about#index", as: :about_index
   get "mission" => "mission#index", as: :mission_index
+  post 'twilio/voice' => 'twilio#voice'
+
   
   resources :properties do
     resource :image, only: [:create]

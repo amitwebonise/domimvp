@@ -22,7 +22,7 @@
     <li><%= @listing.property.total_bedrooms %> bedrooms</li>
     <li><%= @listing.property.total_bathrooms %> bathrooms</li>
     <li><%= @listing.property.commute_to_campus_in_minutes %> minutes to campus</li>
-    <li>What is needed to move in: <%= @listing.property.needed %></li>
+    <li>What is needed to move in: <%= @listing.needed %></li>
     <li>Free to show <%= @listing.schedule %></li>
   </ul>
   <p><%= link_to "Attend an open house", new_listing_appointment_path(@listing) %></p>
