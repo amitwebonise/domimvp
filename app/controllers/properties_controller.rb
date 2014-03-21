@@ -32,9 +32,11 @@ class PropertiesController < ApplicationController
   # POST /properties.json
   def create
     @property = Property.new(property_params)
-
+    
     respond_to do |format|
       if @property.save
+      current_user.properties << @property
+      current_user.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
         format.json { render action: 'show', status: :created, location: @property }
       else
@@ -43,7 +45,7 @@ class PropertiesController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json
   def update

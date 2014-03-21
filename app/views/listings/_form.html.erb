@@ -14,7 +14,7 @@
   <div>
   </div>  
   <p id="new-property">If you haven't already <%= link_to 'Add your place', new_property_path %></p>
-  <%= f.collection_select(:property_id, Property.all, :id, :address) %>
+  <%= f.collection_select(:property_id, current_user.properties.all, :id, :address) %>
   <div class="field">
     <%= f.label :open_to_student_only, "For students only?" %>
     <%= f.check_box :open_to_student_only %>

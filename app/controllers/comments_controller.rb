@@ -4,7 +4,9 @@ class CommentsController < ApplicationController
   def create
     @appointment = Appointment.find(params[:appointment_id])
     @comment = @appointment.comments.create(comment_params)
-    redirect_to listing_appointment_path(@appointment.listing, @appointment)  
+    current_user.comments << @comment
+    current_user.save
+      redirect_to listing_appointment_path(@appointment.listing, @appointment)  
   end
 
   private

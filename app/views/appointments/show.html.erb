@@ -4,7 +4,7 @@
 <p>Comments</p>
 <ul>
   <% @appointment.comments.each do |comment| %>
-    <li><%= image_tag(@profile.avatar_url, width: "50", height: "50") %> <%= comment.comment %></li>
+      <li><%= image_tag(comment.user.profile.avatar_url, width: "50", height: "50") %> <%= comment.comment %></li>   
   <% end %>
 </ul>
 
