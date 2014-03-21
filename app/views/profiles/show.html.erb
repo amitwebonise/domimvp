@@ -1,4 +1,6 @@
+<% if current_user and @profile.user %>
 <h2>Hey <%= @profile.first_name %>!</h2>
+<% end %>
 
 <p><%= image_tag @profile.avatar_url(:thumb) %></p>
 <p><%= @profile.first_name %> <%= @profile.last_name %></p>
