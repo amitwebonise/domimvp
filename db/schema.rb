@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319023917) do
+ActiveRecord::Schema.define(version: 20140321183058) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20140319023917) do
     t.datetime "updated_at"
     t.integer  "property_id"
     t.string   "schedule"
+    t.text     "needed"
   end
 
   add_index "listings", ["property_id"], name: "index_listings_on_property_id"
@@ -106,12 +107,12 @@ ActiveRecord::Schema.define(version: 20140319023917) do
     t.text     "activities_and_clubs"
     t.boolean  "looking_for_place"
     t.boolean  "open_to_roommates"
-    t.decimal  "price_range"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar"
     t.string   "about"
+    t.integer  "max_price"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

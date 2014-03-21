@@ -31,6 +31,10 @@
     <%= f.label :schedule, "When are you open to show it?" %>
     <%= f.text_field :schedule, :placeholder => "Ex. Mondays after 5pm" %>
   </div>
+  <div class="field">
+    <%= f.label :needed, "What is needed for someone to move in?" %>
+    <%= f.text_field :needed, :placeholder => "Ex. Credit check and first month's deposit." %>
+  </div>
   <div class="actions">
     <%= f.submit :id => "submit-button" %>
   </div>
