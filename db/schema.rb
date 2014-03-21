@@ -49,15 +49,12 @@ ActiveRecord::Schema.define(version: 20140319023917) do
   create_table "appointments", force: true do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "subletter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "listing_id"
     t.datetime "time"
     t.integer  "requester_id"
   end
-
-  add_index "appointments", ["subletter_id"], name: "index_appointments_on_subletter_id"
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
