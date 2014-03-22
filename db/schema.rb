@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321183058) do
+ActiveRecord::Schema.define(version: 20140321221949) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 20140321183058) do
     t.string   "avatar"
     t.string   "about"
     t.integer  "max_price"
+    t.string   "phone_number"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

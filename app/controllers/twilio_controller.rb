@@ -4,6 +4,7 @@ class TwilioController < ApplicationController
   include Webhookable
  
   after_filter :set_header
+  protect_from_forgery except: :voice
  
   def voice
     response = Twilio::TwiML::Response.new do |r|
