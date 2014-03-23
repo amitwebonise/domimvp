@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   has_many :properties
   has_one :profile
   has_many :comments
+
+  delegate :phone_number, to: :profile, allow_nil: true
   
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
