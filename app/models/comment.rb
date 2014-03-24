@@ -1,5 +1,7 @@
 class Comment < ActiveRecord::Base
   validates :comment, :user, presence: true
+  include AppointmentsHelper
+
 
   include ActsAsCommentable::Comment
 
@@ -23,14 +25,16 @@ class Comment < ActiveRecord::Base
   private
 
   def recipient_phone_number
+    @appointment = self.commentable
+
     # The user who's currently commenting
     commentor = user
 
     # The user who is listing
-    lister = commentable.listing.user
+    lister = self.commentable.listing.user.profile
 
     # The user who is requesting
-    requester = appointment.requester
+    requester = @appointment.requester
 
     unless user == lister
       phone_number = lister.phone_number

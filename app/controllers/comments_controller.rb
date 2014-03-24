@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   include Mandrill::Rails::WebHookProcessor
+  include AppointmentsHelper
 
   before_action :load_appointment
   
@@ -7,7 +8,7 @@ class CommentsController < ApplicationController
     @comment = @appointment.comments.build(comment_params)
 
     if @comment.save
-      @comment.dispatch_by_sms
+      @comment.send_by_sms
 
       redirect_to listing_appointment_path(@appointment.listing, @appointment)  
     else
@@ -16,10 +17,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  def load_appointment
-    @appointment ||= Appointment.find(params[:appointment_id])
-  end
 
   def comment_params
     params.

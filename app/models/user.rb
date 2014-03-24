@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
  before_create :create_profile
  after_create :add_user_to_mailchimp
-  before_destroy :remove_user_from_mailchimp
+ before_destroy :remove_user_from_mailchimp
 
 
   # Include default devise modules. Others available are:
