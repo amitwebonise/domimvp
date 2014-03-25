@@ -9,7 +9,7 @@
 </div>
 
 <div class="listing-container">
-  <ul class="photo-gallery">
+  <ul class="image_slider">
     <% @listing.property.images.each do |image| %>
       <li><%= image_tag(image.photo_url(:thumb)) %></li>
     <% end %>

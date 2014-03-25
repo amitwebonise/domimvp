@@ -655,6 +655,28 @@
 
 /*end of profile*/
 
+
+/*photo gallery*/
+
+
+.image_slider > img {
+    display: none;
+}
+.thumbnails li {
+    display: inline-block;
+    cursor: pointer;
+}
+.thumbnails li img {
+    width: 40px;
+}
+.thumbnails li.active {
+    border-bottom: 5px solid red;
+}
+
+
+/*end of photo gallery*/
+
+
 /*footer */
 
 footer {
