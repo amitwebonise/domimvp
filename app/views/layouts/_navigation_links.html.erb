@@ -1,18 +1,10 @@
 <%# add navigation links to this file %>
-<ul class="nav navbar-nav navbar-right">
+<ul class="nav">
   <% if defined?(Devise) %>
     <% if user_signed_in? and current_user.profile.present? %>
-      <li><%= link_to "Friends", profiles_path %></li>
+      <li><%= link_to "Looking", profiles_path %></li>
       <li><%= link_to "Dashboard", dashboard_index_path %></li>
-      <li><a href="" class="dropdown-toggle" data-dropdown="drop1">Me <b class="caret"></b></a></li>
-        <ul id="drop1" class="f-dropdown" data-dropdown-content>
-          <li><%= link_to 'Claim Your Property', new_property_path %></li>
-          <li><%= link_to 'Your Property', properties_path %></li>
-          <li><%= link_to "Account", edit_user_registration_path %></li>
-          <li><%= link_to "Profile", profile_path(current_user.profile) %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        </ul>
+      <li><%= link_to "Me", current_user.profile %></li>
       </li>
       <li><%= link_to "List your place", new_listing_path %></li>
     <% else %>

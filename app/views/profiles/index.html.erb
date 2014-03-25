@@ -1,14 +1,10 @@
-<h3><%= link_to "Looking for roommates", profiles_path(:open_to_roomates => true)  %> <%= link_to "Looking for a place", profiles_path(:looking_for_place => true)  %></h3>
+<div class="profile-all">
+  <h3>Filter by: <%= link_to "Looking for roommates", profiles_path(:open_to_roomates => true)  %> <%= link_to "Looking for a place", profiles_path(:looking_for_place => true) %> <%= link_to "Everybody", profiles_path %></h3>
 
 
-<div class="profile-world">
-  <% @profiles.each do |profile| %>
-    <div class="profile-individual">
-      <p><%= link_to(image_tag(profile.avatar_url(:thumb)), profile) %></p>
-      <p><%= profile.first_name %> <%= profile.last_name %></p>
-      <p><%= profile.about %></p>
-      <p>Open to roommates: <%= boolean_to_s profile.open_to_roommates %></p>
-      <p>Looking for a place: <%= boolean_to_s profile.looking_for_place %></p>
-    </div>
-  <% end %>
+  <div class="profile-world">
+    <% @profiles.each do |profile| %>
+        <%= link_to(image_tag(profile.avatar_url(:thumb)), profile) %>
+    <% end %>
+  </div>
 </div>

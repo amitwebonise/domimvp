@@ -1,14 +1,22 @@
-<% if current_user and @profile.user %>
-<h2>Hey <%= @profile.first_name %>!</h2>
-<% end %>
+<div class="sidebar">
+  <p><%= image_tag @profile.avatar_url(:thumb) %></p>
+  <% if current_user == @profile.user %>
+    <li><%= link_to 'Claim Your Property', new_property_path %></li>
+    <li><%= link_to 'Your Property', properties_path %></li>
+    <li><%= link_to "Account", edit_user_registration_path %></li>
+    <li><%= link_to "Edit Profile", edit_profile_path(@profile) %></li>
+    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to "My place", @profile.user.listings %></li>
+  <% end %>
+</div>
 
-<p><%= image_tag @profile.avatar_url(:thumb) %></p>
-<p><%= @profile.first_name %> <%= @profile.last_name %></p>
-<p><%= @profile.year %></p>
-<p><%= @profile.major %></p>
-<p><%= @profile.activities_and_clubs %></p>
-<p><%= @profile.looking_for_place%></p>
-<p><%= @profile.open_to_roommates %></p>
-<p><%= @profile.max_price %></p>
-
-<%= link_to "Edit", edit_profile_path(@profile) %>
+<div class="main-profile">
+  <%= image_tag("drexel.png",  width: 500) %>
+  <div class="profile-story">
+    <p>Hi, my name is <span><%= @profile.first_name %> <%= @profile.last_name %></span> and I am a <span><%= @profile.year %></span> at Drexel purusing a <span><%= @profile.major %></span> major.</p>
+    <p>I enjoy <span><%= @profile.activities_and_clubs %></span>.</p>
+    <p>Something interesting about me is <span><%= @profile.about %></span></p>
+    <p><span><%= boolean_to_s @profile.looking_for_place%></span> to looking for a place right now and <span><%= boolean_to_s @profile.open_to_roommates %></span> to looking for roommates. My max price per month is <span><%= number_to_currency(@profile.max_price) %></span>.</p>
+  </div>
+</div>

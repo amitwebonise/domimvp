@@ -78,3 +78,11 @@ class ListingsController < ApplicationController
     end
 
 end
+
+
+
+ # def update
+ #    ..
+ #    user.follow(params[:user][:follow_id]) if params[:user][:follow_id]
+ #    ..  
+ #  end

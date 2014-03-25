@@ -385,27 +385,34 @@
 
 /*listing */
 
+.rows {
+  height: 100%;
+  width: 100%;
+}
+
 .listing {
-  border: 1px solid lightgray;
   border-radius: 5px;
   background-color: white;
-  width: 340px;
-  margin: 15px 10px 0 20px;
-  padding: 5px 0;
+  width: 300px;
+  margin: 15px 10px 10px 20px;
   float: left;
-  height: 330px;
+  height: 100%;
+  ul {
+    width: 300px;
+  }
   li {
     list-style-type: none;
     text-decoration: none;
-    padding: 1px;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Lucida Grande;
-    display: inline-block;
+    width: 250px;
+    margin-left: 40px;
+    padding: 0 10px;
   }
   p {
     background-color: #025488;
     font-family: Lucida Grande;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 5px;
     text-align: center;
     width: 150px;
@@ -421,9 +428,21 @@
     text-decoration: none;
   }
   img {
-    position: relative;
-    left: -20px;
+    text-align: center;
   }
+}
+
+.list-border {
+  border: 1px solid lightgray;
+  border-top: 0px;
+}
+
+#float-avatar {
+  float: left;
+}
+
+#float-price {
+  float: right;
 }
 
 .individual-listing {
@@ -570,17 +589,81 @@
 
 /*profile*/
 
-.profile-individual {
-  width: 250px;
-  height: 250px;
+.profile-world {
+  padding: 20px;
+}
+
+.profile-world img {
+  border-radius: 5px;
+  border: 1px solid lightgray;  
   float: left;
-  text-align: center;
+  margin-right: 10px;
+}
+
+.profile-all h3 {
+  padding: 10px;
+}
+
+.profile-all h3 a {
+  text-decoration: none;
+}
+
+.profile-all h3 a:hover {
+  text-decoration: underline;
+}
+
+
+
+.sidebar {
+  position: fixed;
+  left: 0px;
+  width: 30%;
+  padding: 20px;
+}
+
+.sidebar img {
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
+
+.sidebar li {
+  list-style-type: none;
+  font-size: 20px;
+  font-family: Lucida Grande;
+  padding-bottom: 8px; 
+}
+
+.sidebar li a {
+  text-decoration: none;
+}
+
+.main-profile {
+  margin-left: 30%;
+  padding: 20px 30px;
+  font-size: 18px;
+  font-family: Lucida Grande;
+}
+
+.main-profile img {
+  margin-bottom: 50px;
+}
+
+.profile-story span {
+  color: #025488;
 }
 
 
 /*end of profile*/
 
+/*footer */
 
+footer {
+  background-color: darkgray;
+  bottom: 0px;
+}
+
+
+/*end of footer*/
 
 
 
