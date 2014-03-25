@@ -2,7 +2,7 @@
 <ul class="nav navbar-nav navbar-right">
   <% if defined?(Devise) %>
     <% if user_signed_in? and current_user.profile.present? %>
-      <li><%= link_to "People", profiles_path %></li>
+      <li><%= link_to "Friends", profiles_path %></li>
       <li><%= link_to "Dashboard", dashboard_index_path %></li>
       <li><a href="" class="dropdown-toggle" data-dropdown="drop1">Me <b class="caret"></b></a></li>
         <ul id="drop1" class="f-dropdown" data-dropdown-content>

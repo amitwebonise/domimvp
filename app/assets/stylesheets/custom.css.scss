@@ -446,7 +446,7 @@
 .listing-container p a {
   color: white;
   font-family: Lucida Grande;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .listing-container li {
@@ -508,12 +508,23 @@
 /*navbar */
 .nav a {
   color: #025488;
+  text-decoration: none;
 }
+
 
 .navbar-brand {
   top: -15px;
   position: relative;
 }
+
+.top-bar {
+  height: 10%;
+}
+
+.name img {
+  margin-top: -10px;
+}
+
 /*end of navabar*/
 
 /*other links */

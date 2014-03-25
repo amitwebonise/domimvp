@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :properties
   has_one :profile
   has_many :comments
+  # acts_as_follower
 
   delegate :phone_number, to: :profile, allow_nil: true
   
