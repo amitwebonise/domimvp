@@ -1,4 +1,4 @@
-<%= nested_form_for @property, :html=> {:multipart => true }  do |f| %>
+<%= nested_form_for @property  do |f| %>
   <% if @property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -13,9 +13,9 @@
   <div class="field">
     <%= f.fields_for :images do |image_form| %>
       <%= image_form.file_field :photo %>
-      <a><%= image_form.link_to_remove "Remove this attatchment" %></a>
+      <%= image_form.link_to_remove "Remove this attatchment" %>
     <% end %>
-    <a><%= f.link_to_add "Add photo", :images %></a>
+    <%= f.link_to_add "Add photo", :images %>
   </div>
   <div class="field">
     <%= f.label :total_bedrooms %><br>

@@ -7,7 +7,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "Domi: College Housing Made Easy" %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+    <%= javascript_include_tag "vendor/modernizr", "nested_form", "application" %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'domiapp.png' %>
   </head>
@@ -19,6 +20,5 @@
     <% else %>
       <%= yield %>
     <% end %>
-    <%= javascript_include_tag "application" %>
   </body>
 </html>

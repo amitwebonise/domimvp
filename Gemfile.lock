@@ -289,7 +289,6 @@ DEPENDENCIES
   gmaps4rails
   has_scope
   jbuilder (~> 1.2)
-  jquery-rails
   mandrill-rails
   mini_magick
   nested_form
