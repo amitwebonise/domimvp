@@ -1,4 +1,7 @@
 <div class="dashboard">
+  <% if current_user.listings.nil? %>
+  <%= link_to "Add your place", new_listing_path %>
+  <% else %>
   <h2>Your listings</h2>
   <ul>
     <% current_user.listings.each do |listing| %>
@@ -10,6 +13,9 @@
       <% end %>   
     <% end %>
   </ul>
+  <% end %>
+  <% if current_user.appointments.nil? %>
+  <% else %>
   <h2>Your appointments</h2>
   <ul>
     <% current_user.appointments.each do |appointment| %>
@@ -20,3 +26,4 @@
       <% end %>
   </ul>
 </div>
+<% end %>

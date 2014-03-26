@@ -1,15 +1,13 @@
-<h1>Places around Drexel</h1>
 <div class="rows">
     <% @listings.each do |listing| %>
     <div class="listing">
-      <ul>
-        <li><%= link_to image_tag(listing.property.images.first.photo_url(:thumb)), listing %></li>
+      <%= link_to image_tag(listing.property.images.first.photo_url(:thumb)), listing %>
+      <%= image_tag(listing.user.profile.avatar_url, width: 55, height: 55, id: "float-avatar") %>  
+      <ul class="list-border">
         <li><%= listing.property.address %></li>
-        <li><%= listing.property.description %></li><br>
-        <li><%= number_to_currency(listing.rent_per_month) %> per month</li>
+        <li><%= listing.property.description %> <%= number_to_currency(listing.rent_per_month, id: "float-price") %> per month</li>
       </ul>
     </div>
     <% end %>
 </div>
-
 
