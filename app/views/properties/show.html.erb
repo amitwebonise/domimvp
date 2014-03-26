@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class='image_slider'>
+<div class="google-maps">
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x400&sensor=false&zoom=16&markers=#{@property.latitude}%2C#{@property.longitude}" %>
+</div>
+
+<div class="listing-container">
+  <div class='image_slider'>
     <ul>
-      <%= image_tag(@property.images.first.photo_url) %>
+      <%= image_tag(@property.images.first.photo_url(:gallery)) %>
     </ul>
   </div>
   <ul class='thumbnails'>
@@ -11,42 +16,15 @@
         <li data-image-url="<%=image.photo_url(:gallery)%>"><%= image_tag(image.photo_url(:gallery)) %></li>
     <% end %>
   </ul>
+
+  <ul>
+    <li><%= @property.address %></li>
+    <li><%= @property.description %></li>
+    <li><%= @property.total_bedrooms %> bedrooms</li>
+    <li><%= @property.total_bathrooms %> bathrooms</li>
+    <li><%= @property.commute_to_campus_in_minutes %> minutes to campus</li>
+  </ul>
 </div>
-
-<p>
-  <strong>Total bedrooms:</strong>
-  <%= @property.total_bedrooms %>
-</p>
-
-<p>
-  <strong>Total bathrooms:</strong>
-  <%= @property.total_bathrooms %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
-
-<p>
-  <strong>City, State:</strong>
-  <%= @property.city %>, <%= @property.state %>
-</p>
-
-<p>
-  <strong>Zip Code:</strong>
-  <%= @property.zip_code %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @property.description %>
-</p>
-
-<p>
-  <strong>Commute to campus in minutes:</strong>
-  <%= @property.commute_to_campus_in_minutes %>
-</p>
 
 
 <%= link_to 'Edit', edit_property_path(@property) %> |

@@ -3,7 +3,7 @@ class Appointment < ActiveRecord::Base
   validates :requester_id, presence: true
 
   belongs_to :requester, class_name: 'User'
-  belongs_to :listing
+  belongs_to :listing, dependent: :destroy
   acts_as_commentable
   has_paper_trail
 end

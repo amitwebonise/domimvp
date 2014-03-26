@@ -482,8 +482,7 @@
 .google-maps {
   float: right;
   text-align: center;
-  width: 40%;
-  height: 30%;
+  margin-right: 10%;
 }
 
 .google-maps h3 {
@@ -491,6 +490,20 @@
   font-family: Lucida Grande;
   font-size: 20px;
 }
+
+.google-maps img {
+  height: 350px;
+  width: 300px;
+  border: 3px solid lightgray;
+  margin-top: 20px;
+}
+
+.google-maps h2 img {
+  height: 300px;
+  width: 300px;
+  margin-top: 0;
+}
+
 
 /*end of listing*/
 

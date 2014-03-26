@@ -3,7 +3,7 @@
   <h2>
     <%= link_to(@listing.user.profile) do %>
       <%= image_tag(@listing.user.profile.avatar_url) %><br>
-      <strong><%= @listing.user.profile.first_name %> <%= @listing.user.profile.last_name %></strong>
+      <strong>Listed by <%= @listing.user.profile.first_name %> <%= @listing.user.profile.last_name %></strong>
     <% end %>
   </h2>
 </div>
@@ -11,7 +11,7 @@
 <div class="listing-container">
   <div class='image_slider'>
     <ul>
-      <%= image_tag(@listing.property.images.first.photo_url) %>
+      <%= image_tag(@listing.property.images.first.photo_url(:gallery)) %>
     </ul>
   </div>
   <ul class='thumbnails'>
