@@ -9,11 +9,17 @@
 </div>
 
 <div class="listing-container">
-  <ul class="image_slider">
+  <div class='image_slider'>
+    <ul>
+      <%= image_tag(@listing.property.images.first.photo_url) %>
+    </ul>
+  </div>
+  <ul class='thumbnails'>
     <% @listing.property.images.each do |image| %>
       <li><%= image_tag(image.photo_url(:thumb)) %></li>
     <% end %>
   </ul>
+
   <ul>
     <li><%= @listing.property.address %></li>
     <li><%= number_to_currency(@listing.rent_per_month) %> per month</li>
