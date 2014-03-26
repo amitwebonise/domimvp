@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 
-<% @property.images.each do |image| %>
-  <%= image_tag(image.photo_url) %>
-<% end %>
+<div class='image_slider'>
+    <ul>
+      <%= image_tag(@property.images.first.photo_url) %>
+    </ul>
+  </div>
+  <ul class='thumbnails'>
+    <% @property.images.each do |image| %>
+        <li data-image-url="<%=image.photo_url(:gallery)%>"><%= image_tag(image.photo_url(:gallery)) %></li>
+    <% end %>
+  </ul>
+</div>
 
 <p>
   <strong>Total bedrooms:</strong>
